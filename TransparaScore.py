@@ -80,9 +80,8 @@ SVG_ICONS = {
     "shield": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>',
     "chart": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="20" x2="18" y2="10"/><line x1="12" y1="20" x2="12" y2="4"/><line x1="6" y1="20" x2="6" y2="14"/></svg>',
     "brain": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#8B5CF6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9.5 2A2.5 2.5 0 0 1 12 4.5v15a2.5 2.5 0 0 1-4.96.44 2.5 2.5 0 0 1-2.96-3.08 3 3 0 0 1-.34-5.58 2.5 2.5 0 0 1 1.32-4.24 2.5 2.5 0 0 1 4.44-2.04z"/><path d="M14.5 2A2.5 2.5 0 0 0 12 4.5v15a2.5 2.5 0 0 0 4.96.44 2.5 2.5 0 0 0 2.96-3.08 3 3 0 0 0 .34-5.58 2.5 2.5 0 0 0-1.32-4.24 2.5 2.5 0 0 0-4.44-2.04z"/></svg>',
-    "globe": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
-    "check": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#10B981" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"/></svg>',
-    "link": '<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></svg>'
+    "globe": '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#F59E0B" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><line x1="2" y1="12" x2="22" y2="12"/><path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z"/></svg>',
+    "building": '<svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="#3B82F6" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="2" width="16" height="20" rx="2" ry="2"/><line x1="9" y1="22" x2="9" y2="22.01"/><line x1="15" y1="22" x2="15" y2="22.01"/><line x1="9" y1="18" x2="9" y2="18.01"/><line x1="15" y1="18" x2="15" y2="18.01"/><line x1="9" y1="14" x2="9" y2="14.01"/><line x1="15" y1="14" x2="15" y2="14.01"/><line x1="9" y1="10" x2="9" y2="10.01"/><line x1="15" y1="10" x2="15" y2="10.01"/><line x1="9" y1="6" x2="9" y2="6.01"/><line x1="15" y1="6" x2="15" y2="6.01"/></svg>'
 }
 
 
@@ -675,7 +674,7 @@ def get_credit_rating_tier(score: float) -> Dict[str, str]:
 # ==============================================================================
 def render_custom_table(headers: List[str], rows: List[List[Any]]) -> str:
     """Renders a sleek, dark-slate HTML table with monospace numbers and hover glow."""
-    ths = "".join([f'<th style="padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; color: #8B9BB4; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #1E293B; background: #0E131F;">{h}</th>' for h in headers])
+    ths = "".join([f'<th style="padding: 0.75rem 1rem; text-align: left; font-size: 0.75rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.05em; border-bottom: 1px solid #1E293B; background: #0E131F;">{h}</th>' for h in headers])
     trs = []
     for r in rows:
         tds = []
@@ -723,6 +722,93 @@ def render_dashboard():
         padding-right: 1.8rem !important;
     }
 
+    /* =========================================================================
+       ---- SIDEBAR POLISH & CONTRAST ----
+       ========================================================================= */
+    [data-testid="stSidebar"] {
+        background-color: #0B0F19 !important;
+        border-right: 1px solid #1E293B !important;
+    }
+
+    [data-testid="stSidebar"] h1, [data-testid="stSidebar"] h2, [data-testid="stSidebar"] h3 {
+        color: #FFFFFF !important;
+        font-weight: 700 !important;
+    }
+
+    [data-testid="stSidebar"] label, [data-testid="stSidebar"] .stMarkdown p {
+        color: #E2E8F0 !important;
+        font-size: 0.88rem !important;
+        font-weight: 500 !important;
+    }
+
+    [data-testid="stSidebar"] .stCaption {
+        color: #94A3B8 !important;
+    }
+
+    /* Form Controls & Inputs (Dark Theme Override) */
+    div[data-baseweb="select"] > div {
+        background-color: #141B2D !important;
+        border: 1px solid #28354D !important;
+        border-radius: 8px !important;
+        color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="select"] span {
+        color: #FFFFFF !important;
+        font-weight: 600 !important;
+    }
+
+    div[data-baseweb="select"] svg {
+        fill: #94A3B8 !important;
+    }
+
+    /* Dropdown Menu Popover */
+    ul[data-baseweb="menu"] {
+        background-color: #141B2D !important;
+        border: 1px solid #28354D !important;
+    }
+
+    li[data-baseweb="option"] {
+        color: #E2E8F0 !important;
+        background-color: transparent !important;
+    }
+
+    li[data-baseweb="option"]:hover, li[aria-selected="true"] {
+        background-color: #2563EB !important;
+        color: #FFFFFF !important;
+    }
+
+    /* Text Inputs */
+    div[data-baseweb="input"] > div {
+        background-color: #141B2D !important;
+        border: 1px solid #28354D !important;
+        border-radius: 8px !important;
+        color: #FFFFFF !important;
+    }
+
+    div[data-baseweb="input"] input {
+        color: #FFFFFF !important;
+        background-color: transparent !important;
+    }
+
+    /* Radio Buttons */
+    div[data-testid="stRadio"] label {
+        color: #E2E8F0 !important;
+        font-weight: 500 !important;
+    }
+
+    /* Expanders */
+    div[data-testid="stExpander"] {
+        background-color: #0E1424 !important;
+        border: 1px solid #1E293B !important;
+        border-radius: 8px !important;
+    }
+
+    div[data-testid="stExpander"] summary {
+        color: #CBD5E1 !important;
+        font-weight: 600 !important;
+    }
+
     /* Connectivity Status Bar */
     .status-bar {
         display: flex;
@@ -734,7 +820,7 @@ def render_dashboard():
         padding: 0.5rem 1rem;
         margin-bottom: 1.2rem;
         font-size: 0.78rem;
-        color: #8B9BB4;
+        color: #94A3B8;
         flex-wrap: wrap;
     }
     .status-item {
@@ -787,7 +873,7 @@ def render_dashboard():
     .metric-card-title {
         font-size: 0.75rem;
         font-weight: 600;
-        color: #8B9BB4;
+        color: #94A3B8;
         text-transform: uppercase;
         letter-spacing: 0.05em;
     }
@@ -871,7 +957,7 @@ def render_dashboard():
         padding: 0.5rem 0.8rem;
         background-color: transparent;
         border: none;
-        color: #8B9BB4;
+        color: #94A3B8;
         font-size: 0.95rem;
         font-weight: 600;
     }
@@ -885,11 +971,6 @@ def render_dashboard():
         border-bottom: 2px solid #3B82F6 !important;
     }
 
-    [data-testid="stSidebar"] {
-        background-color: #0A0E17 !important;
-        border-right: 1px solid #1E293B;
-    }
-
     ::-webkit-scrollbar { width: 6px; height: 6px; }
     ::-webkit-scrollbar-track { background: #080B11; }
     ::-webkit-scrollbar-thumb { background: #1E293B; border-radius: 3px; }
@@ -900,9 +981,14 @@ def render_dashboard():
 
     # Sidebar Controls
     with st.sidebar:
-        st.markdown("### TransparaScore", unsafe_allow_html=True)
+        st.markdown(f"""
+        <div style="display:flex; align-items:center; gap:0.6rem; margin-bottom:0.2rem;">
+            {SVG_ICONS['building']}
+            <span style="font-size:1.35rem; font-weight:800; color:#FFFFFF; letter-spacing:-0.02em;">TransparaScore</span>
+        </div>
+        """, unsafe_allow_html=True)
         st.caption("Institutional Credit Risk & Intelligence Platform")
-        st.markdown("---")
+        st.markdown("<hr style='border-color:#1E293B; margin: 0.8rem 0 1rem 0;'>", unsafe_allow_html=True)
         
         mode = st.radio("Selection Mode", ["Preset Market Leaders", "Custom Global Ticker"], horizontal=True)
         
@@ -914,7 +1000,7 @@ def render_dashboard():
             selected_ticker = custom_input.strip().upper() if custom_input else "NVDA"
             company_name = f"{selected_ticker} (Custom)"
             
-        st.markdown("---")
+        st.markdown("<hr style='border-color:#1E293B; margin: 0.8rem 0 1rem 0;'>", unsafe_allow_html=True)
         col_t1, col_t2 = st.columns(2)
         with col_t1:
             time_period = st.selectbox("History Window", ["1mo", "3mo", "6mo", "1y", "2y"], index=2)
@@ -935,7 +1021,7 @@ def render_dashboard():
             fred_key_input = st.text_input("FRED API Key (Optional)", type="password", value=get_safe_secret("FRED_API_KEY", ""))
             st.caption("Treasury & World Bank live feeds work automatically.")
 
-        st.markdown("---")
+        st.markdown("<hr style='border-color:#1E293B; margin: 0.8rem 0 1rem 0;'>", unsafe_allow_html=True)
         refresh_button = st.button("Refresh Data", use_container_width=True)
         if refresh_button:
             st.cache_data.clear()
@@ -943,7 +1029,7 @@ def render_dashboard():
 
         st.markdown("""
             <div style='font-size:0.75rem; color:#64748B; margin-top:1.5rem; text-align:center;'>
-                TransparaScore v4.0 • Institutional AI<br>
+                TransparaScore v4.2 • Institutional AI<br>
                 Altman Z • SHAP • Monte Carlo • Merton PD
             </div>
         """, unsafe_allow_html=True)
@@ -1013,13 +1099,13 @@ def render_dashboard():
                     ({price_sign}{stock_meta.get('price_change_pct', 0):.2f}%)
                 </span>
             </div>
-            <p style='margin: 0.3rem 0 0 0; color: #8B9BB4; font-size: 0.88rem;'>
+            <p style='margin: 0.3rem 0 0 0; color: #94A3B8; font-size: 0.88rem;'>
                 Sector: <span style='color:#CBD5E1; font-weight:500;'>{stock_meta.get('sector')}</span> &nbsp;|&nbsp; Industry: <span style='color:#CBD5E1; font-weight:500;'>{stock_meta.get('industry')}</span> &nbsp;|&nbsp; Market Cap: <span style='color:#CBD5E1; font-weight:600;'>${stock_meta.get('market_cap', 0):,.0f}</span> &nbsp;|&nbsp; 52W Range: <span style='color:#CBD5E1;'>${stock_meta.get('52w_low', 0):,.2f} - ${stock_meta.get('52w_high', 0):,.2f}</span>
             </p>
         </div>
         <div style='display: flex; align-items: center; gap: 1rem; margin-top: 0.5rem;'>
             <div style='text-align: right;'>
-                <div style='font-size: 0.75rem; color: #8B9BB4; text-transform: uppercase; letter-spacing: 0.05em;'>Credit Grade</div>
+                <div style='font-size: 0.75rem; color: #94A3B8; text-transform: uppercase; letter-spacing: 0.05em;'>Credit Grade</div>
                 <div style='font-size: 0.9rem; color: #CBD5E1; font-weight: 600;'>{rating_info['grade']}</div>
             </div>
             <span class="rating-pill {rating_info['class']}">{rating_info['tier']}</span>
@@ -1043,22 +1129,22 @@ def render_dashboard():
         <div class="metric-card">
             <div class="metric-card-title">Default Prob (1-Yr PD)</div>
             <div class="metric-card-value" style="color: {'#34D399' if altman_data['pd_1yr_pct'] < 2.0 else '#F87171'};">{altman_data['pd_1yr_pct']:.2f}%</div>
-            <div class="metric-card-sub" style="color: #8B9BB4;">5-Yr Horizon: {altman_data['pd_5yr_pct']:.1f}%</div>
+            <div class="metric-card-sub" style="color: #94A3B8;">5-Yr Horizon: {altman_data['pd_5yr_pct']:.1f}%</div>
         </div>
         <div class="metric-card">
             <div class="metric-card-title">Financial Health</div>
             <div class="metric-card-value" style="color: #34D399;">{financial_score:.1f}</div>
-            <div class="metric-card-sub" style="color: #8B9BB4;">Weight: {norm_w_fin:.0%}</div>
+            <div class="metric-card-sub" style="color: #94A3B8;">Weight: {norm_w_fin:.0%}</div>
         </div>
         <div class="metric-card">
             <div class="metric-card-title">Macro Resilience</div>
             <div class="metric-card-value" style="color: #FBBF24;">{macro_score:.1f}</div>
-            <div class="metric-card-sub" style="color: #8B9BB4;">Weight: {norm_w_mac:.0%}</div>
+            <div class="metric-card-sub" style="color: #94A3B8;">Weight: {norm_w_mac:.0%}</div>
         </div>
         <div class="metric-card">
             <div class="metric-card-title">News Sentiment</div>
             <div class="metric-card-value" style="color: #A78BFA;">{sentiment_score:.1f}</div>
-            <div class="metric-card-sub" style="color: #8B9BB4;">Polarity: {sentiment_signal:+.2f}</div>
+            <div class="metric-card-sub" style="color: #94A3B8;">Polarity: {sentiment_signal:+.2f}</div>
         </div>
     </div>
     """, unsafe_allow_html=True)
@@ -1085,7 +1171,7 @@ def render_dashboard():
                 title={'text': f"Credit Score: <b>{final_credit_score:.1f}</b> ({rating_info['tier']})", 'font': {'size': 17, 'color': '#FFFFFF'}},
                 delta={'reference': 60.0, 'increasing': {'color': '#10B981'}, 'decreasing': {'color': '#EF4444'}, 'suffix': " vs Med"},
                 gauge={
-                    'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "#8B9BB4"},
+                    'axis': {'range': [0, 100], 'tickwidth': 1, 'tickcolor': "#94A3B8"},
                     'bar': {'color': "#3B82F6", 'thickness': 0.28},
                     'bgcolor': "#0E1422",
                     'borderwidth': 1,
@@ -1128,7 +1214,7 @@ def render_dashboard():
                     <li><b>Macro Backdrop:</b> Operating in an environment that is <b>{macro_status}</b> (10Y Yield at <code>{macro_data['rate10y_pct']:.2f}%</code>, Inflation at <code>{macro_data['cpi_yoy_pct']:.1f}%</code>).</li>
                     <li><b>Sentiment & Reputation:</b> Intelligence stream indicates <b>{sent_status}</b> market perception (Polarity: <code>{sentiment_signal:+.2f}</code>).</li>
                 </ul>
-                <div style="font-size:0.8rem; color:#8B9BB4; margin-top:0.5rem;">
+                <div style="font-size:0.8rem; color:#94A3B8; margin-top:0.5rem;">
                     Feed: {stock_data_source} • Timestamp (UTC): {datetime.now(timezone.utc).strftime('%Y-%m-%d %H:%M')}
                 </div>
             </div>
@@ -1223,7 +1309,7 @@ def render_dashboard():
         with z_col2:
             st.markdown(f"""
             <div class="glass-card" style="text-align:center; padding:1.5rem;">
-                <div style="font-size:0.8rem; color:#8B9BB4; text-transform:uppercase; letter-spacing:0.05em;">1-Year Cumulative Default Probability</div>
+                <div style="font-size:0.8rem; color:#94A3B8; text-transform:uppercase; letter-spacing:0.05em;">1-Year Cumulative Default Probability</div>
                 <div style="font-size:2.8rem; font-weight:800; color:{'#10B981' if altman_data['pd_1yr_pct'] < 2.0 else '#EF4444'}; margin:0.3rem 0; font-family:'JetBrains Mono', monospace;">
                     {altman_data['pd_1yr_pct']:.2f}%
                 </div>
@@ -1231,7 +1317,7 @@ def render_dashboard():
                     5-Year Structural Horizon PD: <b>{altman_data['pd_5yr_pct']:.2f}%</b>
                 </div>
                 <hr style="border-color:#1E293B; margin:1rem 0;">
-                <div style="text-align:left; font-size:0.85rem; color:#8B9BB4; line-height:1.7;">
+                <div style="text-align:left; font-size:0.85rem; color:#94A3B8; line-height:1.7;">
                     <b>Total Balance Sheet Assets:</b> ${stock_meta.get('total_assets', 0):,.0f}<br>
                     <b>Total Funded Debt:</b> ${stock_meta.get('total_debt', 0):,.0f}<br>
                     <b>Annual EBITDA:</b> ${stock_meta.get('ebitda', 0):,.0f}<br>
@@ -1291,7 +1377,7 @@ def render_dashboard():
             ))
             radar_fig.update_layout(
                 polar=dict(
-                    radialaxis=dict(visible=True, range=[0, 100], color="#8B9BB4"),
+                    radialaxis=dict(visible=True, range=[0, 100], color="#94A3B8"),
                     bgcolor="#0F1624"
                 ),
                 paper_bgcolor="rgba(0,0,0,0)",
@@ -1378,7 +1464,7 @@ def render_dashboard():
                 <div style="background:#0E1422; border:1px solid #1E293B; border-radius:8px; padding:0.75rem 1rem; margin-bottom:0.5rem;">
                     <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:0.2rem;">
                         <span class="sentiment-chip {chip_class}">{label.upper()} ({article.get('score', 0.0):+.1f})</span>
-                        <span style="font-size:0.75rem; color:#8B9BB4;">{article.get('publisher', 'News')} • {article.get('date', 'Recent')}</span>
+                        <span style="font-size:0.75rem; color:#94A3B8;">{article.get('publisher', 'News')} • {article.get('date', 'Recent')}</span>
                     </div>
                     <a href="{article.get('link', '#')}" target="_blank" style="text-decoration:none; color:#F8FAFC; font-weight:500; font-size:0.9rem;">
                         {article.get('title', 'Headline')}
@@ -1436,7 +1522,7 @@ def render_dashboard():
             
             st.markdown(f"""
             <div class="glass-card" style="text-align: center; padding: 1.5rem;">
-                <div style="font-size: 0.8rem; color: #8B9BB4; text-transform: uppercase;">Stressed Credit Score</div>
+                <div style="font-size: 0.8rem; color: #94A3B8; text-transform: uppercase;">Stressed Credit Score</div>
                 <div style="font-size: 2.5rem; font-weight: 800; color: #FFFFFF; font-family:'JetBrains Mono', monospace; margin: 0.2rem 0;">
                     {stressed_composite:.1f}
                 </div>
