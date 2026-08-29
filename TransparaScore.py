@@ -1621,11 +1621,15 @@ def render_dashboard():
         "Timestamp_UTC": datetime.now(timezone.utc).isoformat()
     }
     
-    col_foot1, col_foot2, col_foot3 = st.columns([2, 1, 1])
+    col_foot1, col_foot2, col_foot3 = st.columns([2.2, 0.9, 0.9])
     with col_foot1:
         st.markdown("""
-        <div style='color: #64748B; font-size: 0.85rem; padding-top: 0.5rem;'>
-            <b>TransparaScore</b> • Institutional Explainable Credit Intelligence Platform &nbsp;|&nbsp; MIT License
+        <div style='color: #94A3B8; font-size: 0.88rem; padding-top: 0.3rem; line-height: 1.6;'>
+            <b style='color: #FFFFFF;'>TransparaScore</b> • Institutional Explainable Credit Intelligence &nbsp;|&nbsp; <span style='color: #60A5FA;'>MIT License</span><br>
+            Developed by <b style='color: #FFFFFF;'>Nitanshu Tak</b> &nbsp;•&nbsp; 
+            <a href='https://github.com/Nitanshu715' target='_blank' style='color: #38BDF8; text-decoration: none; font-weight: 500;'>GitHub (@Nitanshu715)</a> &nbsp;|&nbsp; 
+            <a href='https://www.linkedin.com/in/nitanshu-tak-89a1ba289/' target='_blank' style='color: #38BDF8; text-decoration: none; font-weight: 500;'>LinkedIn</a> &nbsp;|&nbsp; 
+            <a href='mailto:nitanshutak070105@gmail.com' style='color: #38BDF8; text-decoration: none; font-weight: 500;'>nitanshutak070105@gmail.com</a>
         </div>
         """, unsafe_allow_html=True)
     with col_foot2:
@@ -1650,3 +1654,4 @@ def render_dashboard():
 
 if __name__ == "__main__" or "streamlit" in os.environ.get("_", ""):
     render_dashboard()
+
